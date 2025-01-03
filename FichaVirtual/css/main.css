@@ -14,3 +14,14 @@
     text-align: center;
     width: 50px;
 }
+
+/*Tamanho da tabela de sanidade máxima*/
+#max-san-display {
+    width: 50px;
+}
+
+/*Tabela de habilidades*/
+.table-container {
+    max-height: 300px;
+    overflow-y: auto; 
+}
