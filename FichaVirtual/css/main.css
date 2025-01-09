@@ -1,15 +1,19 @@
 /*Margem para o final da página*/
+
 body {
     margin-bottom: 15px;
 }
 
+
 /*tamanho do input das tabelas*/
-.table{
+
+.table {
     text-align: center;
     border-collapse: collapse;
 }
 
-.table th, td {
+.table th,
+td {
     border: 1px solid black;
     padding: 10px;
     text-align: center;
@@ -20,24 +24,41 @@ body {
     width: 50px;
 }
 
+
 /*Tamanho da tabela de sanidade máxima*/
+
 #max-san-display {
     width: 50px;
 }
 
+
 /*Tabela de habilidades*/
+
 .table-container {
     max-height: 300px;
-    overflow-y: auto; 
+    overflow-y: auto;
     margin-bottom: 10px;
 }
 
+
 /*Textarea de minha história*/
+
 #persona-hist {
     width: 100%;
-    resize: none;
-    white-space: pre-wrap;
     word-wrap: break-word;
-    min-height: 50px;
+    resize: none;
+    height: 300px;
 }
 
+textarea::-webkit-scrollbar {
+    background-color: rgb(174, 205, 247);
+}
+
+textarea::-webkit-scrollbar-track {
+    background-color: rgb(233, 232, 232);
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background-color: rgb(141, 140, 140);
+    border-radius: 10px;
+}
