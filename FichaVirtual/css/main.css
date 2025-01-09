@@ -1,3 +1,8 @@
+/*Margem para o final da página*/
+body {
+    margin-bottom: 15px;
+}
+
 /*tamanho do input das tabelas*/
 .table{
     text-align: center;
@@ -24,4 +29,15 @@
 .table-container {
     max-height: 300px;
     overflow-y: auto; 
+    margin-bottom: 10px;
 }
+
+/*Textarea de minha história*/
+#persona-hist {
+    width: 100%;
+    resize: none;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    min-height: 50px;
+}
+
