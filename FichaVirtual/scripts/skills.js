@@ -187,4 +187,29 @@ function PesquiseSkill() {
             linha.style.display = 'none';  // Oculta a linha se não corresponder ao filtro
         }
     });
-}
+};
+
+//Adiciona os valores de briga na seção de combate
+function AdicionaValorBriga(){
+    const brigaNormalInput = document.querySelector('input[data-skill-name="Briga-Luta"]');
+    
+    const brigaNormal = brigaNormalInput.value;
+    const brigaBom = Math.floor(brigaNormal / 2);
+    const brigaExtremo = Math.floor(brigaNormal / 5);
+
+    document.querySelector('#briga-normal').textContent = brigaNormal;
+    document.querySelector('#briga-bom').textContent = brigaBom;
+    document.querySelector('#briga-extremo').textContent = brigaExtremo;
+};
+
+//Evento que adiciona os valores de Briga na seção de Combate
+document.addEventListener('DOMContentLoaded', AdicionaValorBriga);
+
+//Adicona eventos em Briga
+document.addEventListener('DOMContentLoaded', () => {
+    const inputBriga = document.querySelector('input[data-skill-name="Briga-Luta');
+
+    if (inputBriga) {
+        inputBriga.addEventListener('input', AdicionaValorBriga)
+    }
+});
