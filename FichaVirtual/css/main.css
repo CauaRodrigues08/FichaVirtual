@@ -65,5 +65,13 @@ textarea::-webkit-scrollbar-thumb {
 
 /*Textareas da seção de combate*/
 .arma-textarea {
-    
+    width: 200px;
+    height: 32px;
+    resize: none;
+}
+
+/*tabela de combate*/
+#tabela-comb {
+    overflow-x: auto;
+    min-width: 600px;
 }

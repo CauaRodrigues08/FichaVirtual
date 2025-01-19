@@ -111,7 +111,7 @@ const skills = [
     {nome: "Rifle (Armas de fogo)", valorBase: 25},
     {nome: "Saltar", valorBase: 20},
     {nome: "Sobrevivência", valorBase: 10},
-    {nome: "Submetralhadora (Armas de Fogo", valorBase: 15},
+    {nome: "Submetralhadora (Armas de Fogo)", valorBase: 15},
     {nome: "Uso de biblioteca", valorBase: 20},
     {nome: "Uso de computadores", valorBase: 5},
     {nome: "Zoologia (Ciência)", valorBase: 1}    

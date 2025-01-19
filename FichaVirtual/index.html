@@ -278,13 +278,13 @@
 
     </div>
 
-    <!-- Combate -->
+   <!-- Combate -->
     <div class="container">
         <br>
         <h3>Combate</h3>
-        <div class="container">
-            <div class="col-10">
-                <table class="table">
+        <div class="row">
+            <div class="col-12"> 
+                <table class="table" id="tabela-comb">
                     <thead>
                         <tr>
                             <th scope="col">Arma</th>
@@ -311,43 +311,90 @@
                             <td>---</td>
                         </tr>
                         <tr>
-                            <td><textarea name="arma1" class="arma-textarea"></textarea></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><textarea name="nome-arma1" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="normal-arma1" id="normal-arma1" min="0"></td>
+                            <td><input type="number" name="bom-arma1" id="bom-arma1" min="0"></td>
+                            <td><input type="number" name="extremo-arma1" id="extremo-arma1" min="0"></td>
+                            <td><textarea name="dano-arma1" id="dano-arma1" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="arma1-ats" id="arma1-ats" min="0"></td>
+                            <td><input type="number" name="arma1-alc" id="arma1-alc" min="0"></td>
+                            <td><input type="number" name="arma1-pente" id="arma1-pente" min="0"></td>
+                            <td><input type="number" name="arma1-falha" id="arma1-falha" min="0"></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><textarea name="arma2" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="normal-arma2" id="normal-arma2" min="0"></td>
+                            <td><input type="number" name="bom-arma2" id="bom-arma2" min="0"></td>
+                            <td><input type="number" name="extremo-arma2" id="extremo-arma2" min="0"></td>
+                            <td><textarea name="dano-arma2" id="dano-arma2" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="arma2-ats" id="arma2-ats" min="0"></td>
+                            <td><input type="number" name="arma2-alc" id="arma2-alc" min="0"></td>
+                            <td><input type="number" name="arma2-pente" id="arma2-pente" min="0"></td>
+                            <td><input type="number" name="arma2-falha" id="arma2-falha" min="0"></td>
                         </tr>
                         <tr>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
+                            <td><textarea name="arma3" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="normal-arma3" id="normal-arma3" min="0"></td>
+                            <td><input type="number" name="bom-arma3" id="bom-arma3" min="0"></td>
+                            <td><input type="number" name="extremo-arma3" id="extremo-arma3" min="0"></td>
+                            <td><textarea name="dano-arma3" id="dano-arma3" class="arma-textarea"></textarea></td>
+                            <td><input type="number" name="arma3-ats" id="arma3-ats" min="0"></td>
+                            <td><input type="number" name="arma3-alc" id="arma3-alc" min="0"></td>
+                            <td><input type="number" name="arma3-pente" id="arma3-pente" min="0"></td>
+                            <td><input type="number" name="arma3-falha" id="arma3-falha" min="0"></td>
                         </tr>
                     </tbody>
                 </table>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-md-6 col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Atributo</th>
+                            <th>Valor</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>MOV</th>
+                            <td id="mov-display"></td>
+                        </tr>
+                        <tr>
+                            <th>Porte</th>
+                            <td id="porte"></td>
+                        </tr>
+                        <tr>
+                            <th>Dano Bônus</th>
+                            <td id="dano-bonus"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-6 col-12">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Habilidade</th>
+                            <th>Normal</th>
+                            <th>Bom</th>
+                            <th>Extremo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Esquiva</td>
+                            <td id="esquiva-normal"></td>
+                            <td id="esquiva-bom"></td>
+                            <td id="esquiva-extremo"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+</div>
+    
         <br>
     
 
