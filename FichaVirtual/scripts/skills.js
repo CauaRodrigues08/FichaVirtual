@@ -213,3 +213,21 @@ document.addEventListener('DOMContentLoaded', () => {
         inputBriga.addEventListener('input', AdicionaValorBriga)
     }
 });
+
+//Calcula e mostra o valor de movimento
+function CalculaMov() {
+    let valorDes = document.querySelector('#valor-des');
+    let valorFor = document.querySelector('#valor-for');
+    let valorTam = document.querySelector('#valor-tam');
+
+    let mov = 0;
+
+    if ((valorDes && valorFor) < valorTam) {
+        mov = 7;
+    };
+    if ((valorDes || valorFor) >= valorTam) {
+
+    }
+}
+
+//Adiciona eventos em
