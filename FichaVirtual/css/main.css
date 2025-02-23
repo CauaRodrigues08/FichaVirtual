@@ -49,7 +49,7 @@ td {
     resize: none;
     height: 300px;
 }
-
+/*barra de scroll*/
 textarea::-webkit-scrollbar {
     background-color: rgb(174, 205, 247);
 }
@@ -74,4 +74,18 @@ textarea::-webkit-scrollbar-thumb {
 #tabela-comb {
     overflow-x: auto;
     min-width: 600px;
+}
+
+/*textareas*/
+.form-control {
+    resize: none;
+}
+
+/*Tamanho dos inputs de dinheiro e nivel de gasto*/
+#nivel-gasto {
+    width: auto;
+}
+
+#persona-din {
+    width: auto;
 }
