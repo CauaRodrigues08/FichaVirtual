@@ -20,6 +20,6 @@ npm start
 ```
 
 E então digite o seguinte na barra de pesquisa de seu navegador:
-````bash
+```bash
 localhost:3000/
 ```
