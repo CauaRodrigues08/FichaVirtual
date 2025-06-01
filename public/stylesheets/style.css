@@ -1,0 +1,91 @@
+/*Margem para o final da página*/
+
+body {
+  margin-bottom: 15px;
+}
+
+
+/*tamanho do input das tabelas*/
+
+.table {
+  text-align: center;
+  border-collapse: collapse;
+}
+
+.table th,
+td {
+  border: 1px solid black;
+  padding: 10px;
+  text-align: center;
+}
+
+.table input {
+  text-align: center;
+  width: 50px;
+}
+
+
+/*Tamanho da tabela de sanidade máxima*/
+
+#max-san-display {
+  width: 50px;
+}
+
+
+/*Tabela de habilidades*/
+
+.table-container {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+
+/*Textarea de minha história*/
+
+#persona-hist {
+  width: 100%;
+  word-wrap: break-word;
+  resize: none;
+  height: 300px;
+}
+/*barra de scroll*/
+textarea::-webkit-scrollbar {
+  background-color: rgb(174, 205, 247);
+}
+
+textarea::-webkit-scrollbar-track {
+  background-color: rgb(233, 232, 232);
+}
+
+textarea::-webkit-scrollbar-thumb {
+  background-color: rgb(141, 140, 140);
+  border-radius: 10px;
+}
+
+/*Textareas da seção de combate*/
+.arma-textarea {
+  width: 200px;
+  height: 32px;
+  resize: none;
+}
+
+/*tabela de combate*/
+#tabela-comb {
+  overflow-x: auto;
+  min-width: 600px;
+}
+
+/*textareas*/
+.form-control {
+  resize: none;
+}
+
+/*Tamanho dos inputs de dinheiro e nivel de gasto*/
+#nivel-gasto {
+  width: auto;
+}
+
+#persona-din {
+  width: auto;
+}
