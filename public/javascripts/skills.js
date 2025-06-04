@@ -86,7 +86,7 @@ const skills = [
     {nome: "Mangual (Luta)", valorBase: 10},
     {nome: "Maquinas pesadas", valorBase: 1},
     {nome: "Manejo de Animais", valorBase: 5},
-    {nome: "Matemática (Ciencia)", valorBase: 1},
+    {nome: "Matemática (Ciência)", valorBase: 1},
     {nome: "Medicina", valorBase: 1},
     {nome: "Mergulho", valorBase: 1},
     {nome: "Meteorologia (Ciência)", valorBase: 1},
