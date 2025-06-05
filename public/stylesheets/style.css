@@ -1,9 +1,26 @@
-/*Margem para o final da página*/
+/*Margem para o final da página e fonte*/
 
 body {
   margin-bottom: 15px;
+  font-family: 'Special Elite', cursive;
 }
 
+/*background do menu*/
+
+.bg-image {
+  background-image: url("/images/call-of-cthulhu-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.btn {
+  transition: filter 0.2s ease;
+}
+
+.btn:hover {
+  filter: brightness(1.1);
+}
 
 /*tamanho do input das tabelas*/
 
