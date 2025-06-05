@@ -7,12 +7,23 @@ body {
 
 /*background do menu*/
 
-.bg-image {
+.bg-image-menu {
   background-image: url("/images/call-of-cthulhu-background.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+/*background de sobre e contato*/
+
+.bg-image-old-paper {
+  background-image: url("/images/old-paper-background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/*botões do menu*/
 
 .btn {
   transition: filter 0.2s ease;
