@@ -11,7 +11,8 @@ O objetivo do projeto é servir como ficha para personagens feitos no sistema de
 Regras da versão pulp talvez sejam adicionadas no futuro, assim como customização mais profunda da ficha. Além disso, será adicionado um menu principal.
 
 ## Instruções de uso
-(Esta seção será atualizada quando a ficha estiver pronta para uso)
+(Esta seção será atualizada quando a ficha estiver pronta para uso)\
+Para uso da ficha, é necessário instalar Node js, para uso dos comandos envolvendo npm.\
 Para testar a ficha no seu estado atual, baixe o arquivo .zip do repositório, extraia os arquivos, abra a pasta no terminal ou IDE de escolha, e execute os seguintes comandos:
 
 ```bash
@@ -21,5 +22,5 @@ npm start
 
 E então digite o seguinte na barra de pesquisa de seu navegador:
 ```bash
-localhost:3000/
+localhost:8000/
 ```
