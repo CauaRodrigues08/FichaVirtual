@@ -19,9 +19,9 @@
             <tbody class="bg-transparent">
                 <tr>
                     <td>FOR</td>
-                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this)" id="valor-for"> </th>
-                        <td class="valor-bom"></td>
-                        <td class=valor-extremo></td>
+                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this); CalculaMov()" id="valor-for"> </th>
+                    <td class="valor-bom"></td>
+                    <td class=valor-extremo></td>
                 </tr>
                 <tr>
                     <td>CON</td>
@@ -31,7 +31,7 @@
                 </tr>
                 <tr>
                     <td>DES</td>
-                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this)" id="valor-des"> </td>
+                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this); CalculaMov()" id="valor-des"> </td>
                     <td class="valor-bom"></td>
                     <td class=valor-extremo></td>
                 </tr>
@@ -43,7 +43,7 @@
                 </tr>
                 <tr>
                     <td>TAM</td>
-                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this); CalculaHpMax()" id="valor-tam"> </td>
+                    <td> <input type="number" placeholder="50" min="0" oninput="AtualizaAtributo(this); CalculaHpMax(); CalculaMov()" id="valor-tam"> </td>
                     <td class="valor-bom"></td>
                     <td class=valor-extremo></td>
                 </tr>

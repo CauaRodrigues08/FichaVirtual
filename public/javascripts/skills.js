@@ -216,18 +216,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
 //Calcula e mostra o valor de movimento
 function CalculaMov() {
-    let valorDes = document.querySelector('#valor-des');
-    let valorFor = document.querySelector('#valor-for');
-    let valorTam = document.querySelector('#valor-tam');
+    let des = parseInt(document.querySelector('#valor-des').value) || 0;
+    let forca = parseInt(document.querySelector('#valor-for').value) || 0;
+    let tam = parseInt(document.querySelector('#valor-tam').value) || 0;
 
-    let mov = 0;
+    let valorMov;
 
-    if ((valorDes && valorFor) < valorTam) {
-        mov = 7;
-    };
-    if ((valorDes || valorFor) >= valorTam) {
-
+    if (des > tam && forca > tam) {
+        valorMov = 9;
+    } else if (des >= tam || forca >= tam) {
+        valorMov = 8;
+    } else {
+        valorMov = 7;
     }
+
+    document.querySelector('#mov-display').textContent = valorMov;
 }
+
 
 //Adiciona eventos em
