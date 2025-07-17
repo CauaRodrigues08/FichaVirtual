@@ -4,14 +4,24 @@ const path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const PORT = 8000;
+require('dotenv').config();
+const dbURI = process.env.DB_URI;
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const sobreRouter = require('./routes/sobre');
 const contatoRouter = require('./routes/contato');
 const criarRouter = require('./routes/criar');
 const fichasRouter = require('./routes/fichas');
+const bodyParser = require('body-parser');
 
 const app = express();
+
+app.use(bodyParser.json());
+
+mongoose.connect(dbURI)
+    .then(() => console.log('MongoDB connected!'))
+    .catch(err => console.log(err));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
