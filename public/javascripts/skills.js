@@ -207,12 +207,32 @@ document.addEventListener('DOMContentLoaded', AdicionaValorBriga);
 
 //Adicona eventos em Briga
 document.addEventListener('DOMContentLoaded', () => {
-    const inputBriga = document.querySelector('input[data-skill-name="Briga-Luta');
+    const inputBriga = document.querySelector('input[data-skill-name="Briga-Luta"]');
 
     if (inputBriga) {
         inputBriga.addEventListener('input', AdicionaValorBriga)
     }
 });
+
+function AdicionaValorEsquiva() {
+    const esquivaNormalInput = document.querySelector('input[data-skill-name="Esquiva"]');
+
+    const esquivaNormal = esquivaNormalInput.value;
+    const esquivaBom = Math.floor(esquivaNormal / 2);
+    const esquivaExtremo = Math.floor(esquivaNormal / 5);
+
+    document.querySelector('#esquiva-normal').textContent = esquivaNormal;
+    document.querySelector('#esquiva-bom').textContent = esquivaBom;
+    document.querySelector('#esquiva-extremo').textContent = esquivaExtremo;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputEsquiva = document.querySelector('input[data-skill-name="Esquiva"]');
+
+    if (inputEsquiva) {
+        inputEsquiva.addEventListener('input', AdicionaValorEsquiva)
+    }
+})
 
 //Calcula e mostra o valor de movimento
 function CalculaMov() {
@@ -232,6 +252,3 @@ function CalculaMov() {
 
     document.querySelector('#mov-display').textContent = valorMov;
 }
-
-
-//Adiciona eventos em
