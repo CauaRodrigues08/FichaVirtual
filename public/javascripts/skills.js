@@ -214,6 +214,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+//Calcula e adiciona o valor de esquiva na tabela de esquiva da seção da combate
+//Nota: Atualmente, a tabela não atualiza senão mediante input. Precisa ser corrigido.
 function AdicionaValorEsquiva() {
     const esquivaNormalInput = document.querySelector('input[data-skill-name="Esquiva"]');
 
@@ -224,15 +226,72 @@ function AdicionaValorEsquiva() {
     document.querySelector('#esquiva-normal').textContent = esquivaNormal;
     document.querySelector('#esquiva-bom').textContent = esquivaBom;
     document.querySelector('#esquiva-extremo').textContent = esquivaExtremo;
-}
+};
 
+//Adiciona o evento responsável por acionar a função AdicionaValorEsquiva
 document.addEventListener('DOMContentLoaded', () => {
     const inputEsquiva = document.querySelector('input[data-skill-name="Esquiva"]');
 
     if (inputEsquiva) {
         inputEsquiva.addEventListener('input', AdicionaValorEsquiva)
+    };
+});
+
+//Calcula e adiciona os valores de porte e dano bonus
+function AdicionaPorteEDanoBonus() {
+    const valorFor = document.querySelector('#valor-for').value;
+    const valorTam = document.querySelector('#valor-tam').value;
+    let total = parseInt(valorFor) + parseInt(valorTam);
+    let db = "0";
+    let porte = 0;
+    let pontosExtras = 0;
+    let pontosAdicionais = 0;
+
+    if (total <= 64) {
+        db = "-2";
+        porte = -2;
+    } else if (total <= 84) {
+        db = "-1";
+        porte = -1;
+    } else if (total <= 124) {
+        db = "0";
+        porte = 0;
+    } else if (total <= 164) {
+        db = "+1D4";
+        porte = 1;
+    } else if (total <= 204) {
+        db = "+1D6";
+        porte = 2;
+    } else if (total <= 284) {
+        db = "+2D6";
+        porte = 3
+    } else if (total <= 364) {
+        db = "+3D6";
+        porte = 4
+    } else if (total <= 444) {
+        db = "+4D6";
+        porte = 5
+    } else {
+        pontosExtras = total - 444;
+        pontosAdicionais = Math.ceil(pontosExtras / 80);
+        db = `+${4 + pontosAdicionais}D6`;
+        porte = 5 + pontosAdicionais;
     }
-})
+
+    document.querySelector('#porte').textContent = porte;
+    document.querySelector('#dano-bonus').textContent = db;
+};
+
+//Adiciona eventos que ativam AdicionaPorteEDanoBonus
+document.addEventListener('DOMContentLoaded', () => {
+    const inputFor = document.querySelector('#valor-for');
+    const inputTam = document.querySelector('#valor-tam');
+
+    if (inputFor && inputTam) {
+        inputFor.addEventListener('input', AdicionaPorteEDanoBonus);
+        inputTam.addEventListener('input', AdicionaPorteEDanoBonus);
+    }
+});
 
 //Calcula e mostra o valor de movimento
 function CalculaMov() {
