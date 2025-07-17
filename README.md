@@ -8,7 +8,7 @@ A ficha está sendo desenvolvida com EJS (templates HTML renderizados no servido
 O objetivo do projeto é servir como ficha para personagens feitos no sistema de rpg Call of Cthulhu 7th Edition. A ficha segue as regras base do sistema e possui cálculos automáticos. 
 
 ## Planos para o futuro
-Regras da versão pulp talvez sejam adicionadas no futuro, assim como customização mais profunda da ficha. Além disso, será adicionado um menu principal.
+Regras da versão pulp talvez sejam adicionadas no futuro, assim como customização mais profunda da ficha.
 
 ## Instruções de uso
 (Esta seção será atualizada quando a ficha estiver pronta para uso)\
