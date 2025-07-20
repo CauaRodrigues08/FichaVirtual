@@ -68,6 +68,26 @@ const sheetSchema = new mongoose.Schema ({
             alcance: Number,
             pente: Number,
             falha: Number
-        },
-    }
+        }
+    },
+    historia: {
+        backstory: String,
+        descricao: String,
+        tracos: String,
+        crencas: String,
+        ferimentos: String,
+        pessoas: String,
+        fobias: String,
+        locais: String,
+        feitiços: String,
+        pertences: String,
+        encontros: String,
+        inventario: String
+    },
+    economias: {
+        nivelGasto: Number,
+        dinheiro: Number,
+        ativos: String
+    },
+    notas: String
 })
