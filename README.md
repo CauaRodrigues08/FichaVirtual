@@ -2,7 +2,7 @@
 Ficha virtual dinâmica em desenvolvimento para uso em TTRPGs, baseada no sistema de RPG Call of Cthulhu (7ª Edição).
 
 ## Informações
-A ficha está sendo desenvolvida com EJS (templates HTML renderizados no servidor), CSS (com Bootstrap) e JavaScript. O backend usa Node.js com Express.
+A ficha está sendo desenvolvida com EJS (templates HTML renderizados no servidor), CSS (com Bootstrap) e JavaScript. O backend usa Node.js com Express. O banco de dados utilizado será MongoDB, junto com Mongoose.
 
 ## Objetivos
 O objetivo do projeto é servir como ficha para personagens feitos no sistema de rpg Call of Cthulhu 7th Edition. A ficha segue as regras base do sistema e possui cálculos automáticos. 
