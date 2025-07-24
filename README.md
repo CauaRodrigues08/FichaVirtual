@@ -13,10 +13,19 @@ Regras da versão pulp talvez sejam adicionadas no futuro, assim como customiza�
 ## Instruções de uso
 (Esta seção será atualizada quando a ficha estiver pronta para uso)\
 Para uso da ficha, é necessário instalar Node js, para uso dos comandos envolvendo npm.\
-Para testar a ficha no seu estado atual, baixe o arquivo .zip do repositório, extraia os arquivos, abra a pasta no terminal ou IDE de escolha, e execute os seguintes comandos:
+Para testar a ficha no seu estado atual, baixe o arquivo .zip do repositório, extraia os arquivos, (ou use o comando git clone) abra a pasta no terminal ou IDE de escolha, e execute o seguinte comando:
 
 ```bash
 npm install
+```
+
+Após isto, crie e configure um arquivo chamado .env no mesmo diretório que o arquivo app.js . Nele, coloque o seguinte, e troque "sua senha aqui" pela senha de conexão do seu cluster:
+```bash
+DB_URI="sua senha aqui"
+```
+
+Comece a aplicação com o seguinte comando:
+```bash
 npm start
 ```
 
