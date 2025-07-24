@@ -18,9 +18,10 @@ const bodyParser = require('body-parser');
 const app = express();
 
 app.use(bodyParser.json());
+app.use(express.urlencoded({ extended: true }));
 
 mongoose.connect(dbURI)
-    .then(() => console.log('MongoDB connected!'))
+    .then(() => console.log('MongoDB conectado!'))
     .catch(err => console.log(err));
 
 // view engine setup
@@ -34,7 +35,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.listen(PORT, () => {
-  console.log(`Server listening on http://localhost:${PORT}`);
+  console.log(`Server escutando em http://localhost:${PORT}`);
 });
 
 app.use('/', indexRouter);
