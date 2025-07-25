@@ -1,7 +1,25 @@
 <%- include('./partials/head') %>
 
-<body class="d-flex align-items-center justify-content-center vh-100 bg-image-old-paper" style="overflow: hidden;">
+<body class="bg-image-old-paper mt-5" style="overflow: hidden;">
+<div class="container">
+    <h2>Fichas criadas</h2>
+    <br>
 
-<h1>Isso vai ser uma página com as fichas criadas pelo usuário</h1>
-
+    <% if (sheets.length > 0) { %>
+        <% sheets.forEach(sheet => { %>
+            <div class="row mb-3">
+                <div class="col-12">
+                    <a href="/fichas/<%= sheet._id %>" class="w-100 text-decoration-none">
+                        <button class="btn btn-outline-dark w-100 d-flex flex-column align-items-start justify-content-center p-3">
+                            <h3 class="text-start mb-1">Nome: <%= sheet.informacoes.nome %> </h3>
+                            <p class="text-start mb-0">Id: <%= sheet._id %></p>
+                        </button>
+                    </a>
+                </div>
+            </div>
+        <% }) %>
+    <% } else { %>
+        <h3>Parece que não há fichas por aqui.</h3>
+    <% } %>
+</div>
 <%- include('./partials/footer') %>

@@ -1,13 +1,22 @@
 const express = require('express');
 const router = express.Router();
+const Sheet = require('../models/sheet');
 
 //Para carregar a lista de fichas
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
+  try {
+
+  const sheets = await Sheet.find();
+
   res.render('lista-fichas', {
     title: 'Lista de fichas',
     styles: ['/stylesheets/style.css'],
-    scripts: []
+    scripts: [],
+    sheets
   });
+} catch (err) {
+  res.status(500).send('Ocorreu um erro: ' + err);
+}
 });
 
 //Para carregar uma ficha específica
