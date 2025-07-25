@@ -15,31 +15,61 @@
         <!-- Insanidade Temporária -->
         <div class="col-12 col-md-2 text-center d-flex align-items-center justify-content-center mb-3 mb-md-0">
             <label for="insan-temp-display" class="me-2">Insanidade Temporária</label>
-            <input type="checkbox" name="caracteristicas.estados.insanidadeTemp" id="insan-temp-display">
+            <input
+                type="checkbox"
+                name="caracteristicas.estados.insanidadeTemp"
+                id="insan-temp-display"
+                value="true"
+                <%= caracteristicas?.estados?.insanidadeTemp ? 'checked' : '' %>
+            >
         </div>
 
         <!-- Insanidade Indefinida -->
         <div class="col-12 col-md-2 text-center d-flex align-items-center justify-content-center mb-3 mb-md-0">
             <label for="insan-indef-display" class="me-2">Insanidade Indefinida</label>
-            <input type="checkbox" name="caracteristicas.estados.insanidadeIndef" id="insan-indef-display">
+            <input
+                type="checkbox"
+                name="caracteristicas.estados.insanidadeIndef"
+                id="insan-indef-display"
+                value="true"
+                <%= caracteristicas?.estados?.insanidadeIndef ? 'checked' : '' %>
+            >
         </div>
 
         <!-- Lesão Grave -->
         <div class="col-12 col-md-2 text-center d-flex align-items-center justify-content-center mb-3 mb-md-0">
             <label for="lesao-grave-display" class="me-2">Lesão Grave</label>
-            <input type="checkbox" name="caracteristicas.estados.lesaoGrave" id="lesao-grave-display">
+            <input
+                type="checkbox"
+                name="caracteristicas.estados.lesaoGrave"
+                id="lesao-grave-display"
+                value="true"
+                <%= caracteristicas?.estados?.lesaoGrave ? 'checked' : '' %>
+            >
         </div>
 
         <!-- Inconsciente -->
         <div class="col-12 col-md-2 text-center d-flex align-items-center justify-content-center mb-3 mb-md-0">
             <label for="incons-display" class="me-2">Inconsciente</label>
-            <input type="checkbox" name="caracteristicas.estados.inconsciente" id="incons-display">
+            <input
+                type="checkbox"
+                name="caracteristicas.estados.inconsciente"
+                id="incons-display"
+                value="true"
+                <%= caracteristicas?.estados?.inconsciente ? 'checked' : '' %>
+            >
         </div>
 
         <!-- Morrendo -->
         <div class="col-12 col-md-2 text-center d-flex align-items-center justify-content-center">
             <label for="dying-display" class="me-2">Morrendo</label>
-            <input type="checkbox" name="caracteristicas.estados.morrendo" id="dying-display">
+            <input
+                type="checkbox"
+                name="caracteristicas.estados.morrendo"
+                id="dying-display"
+                value="true"
+                <%= caracteristicas?.estados?.morrendo ? 'checked' : '' %>
+            >
         </div>
     </div>
 </div>

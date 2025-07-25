@@ -21,30 +21,30 @@
                     <!-- Linha 1 -->
                     <div class="col-md-4">
                         <label for="persona-nome">Nome:</label>
-                        <input type="text" name="informacoes.nome" id="persona-nome" class="form-control">
+                        <input type="text" name="informacoes.nome" value="<%= informacoes?.nome ?? '' %>" id="persona-nome" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="persona-prof">Profissão:</label>
-                        <input type="text" name="informacoes.profissao" id="persona-prof" class="form-control">
+                        <input type="text" name="informacoes.profissao" value="<%= informacoes?.profissao ?? '' %>" id="persona-prof" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="persona-nasc">Naturalidade:</label>
-                        <input type="text" name="informacoes.naturalidade" id="persona-nasc" class="form-control">
+                        <input type="text" name="informacoes.naturalidade" value="<%= informacoes?.naturalidade ?? '' %>" id="persona-nasc" class="form-control">
                     </div>
                 </div>
                 <div class="row mt-3">
                     <!-- Linha 2 -->
                     <div class="col-md-4">
                         <label for="persona-resid">Residência:</label>
-                        <input type="text" name="informacoes.residencia" id="persona-resid" class="form-control">
+                        <input type="text" name="informacoes.residencia" value="<%= informacoes?.residencia ?? '' %>" id="persona-resid" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="persona-prono">Pronome:</label>
-                        <input type="text" name="informacoes.pronome" id="persona-prono" class="form-control">
+                        <input type="text" name="informacoes.pronome" value="<%= informacoes?.pronome ?? '' %>" id="persona-prono" class="form-control">
                     </div>
                     <div class="col-md-4">
                         <label for="persona-idade">Idade:</label>
-                        <input type="number" name="informacoes.idade" id="persona-idade" class="form-control" min="0">
+                        <input type="number" name="informacoes.idade" value="<%= informacoes?.idade ?? '' %>" id="persona-idade" class="form-control" min="0">
                     </div>
                 </div>
             </div>

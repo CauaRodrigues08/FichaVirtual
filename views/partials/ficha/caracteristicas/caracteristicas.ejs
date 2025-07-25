@@ -11,9 +11,19 @@
         <tr>
             <td>HP</td>
             <td class="hp-max"></td>
-            <td> <input type="number" name="caracteristicas.hp" id="hp-atual" min="0" oninput="VerificaHp()"> </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.hp"
+                    id="hp-atual"
+                    min="0"
+                    oninput="VerificaHp()"
+                    value="<%= caracteristicas?.hp ?? '' %>"
+                >
+            </td>
         </tr>
     </table>
+
     <!--MP-->
     <table class="table">
         <tr>
@@ -24,9 +34,19 @@
         <tr>
             <td>MP</td>
             <td class="mp-max"></td>
-            <td> <input type="number" name="caracteristicas.mp" id="mp-atual" min="0" oninput="VerificaMp()"> </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.mp"
+                    id="mp-atual"
+                    min="0"
+                    oninput="VerificaMp()"
+                    value="<%= caracteristicas?.mp ?? '' %>"
+                >
+            </td>
         </tr>
     </table>
+
     <!--Sorte-->
     <table class="table">
         <tr>
@@ -36,10 +56,29 @@
         </tr>
         <tr>
             <td>Sorte</td>
-            <td> <input type="number" name="caracteristicas.status.SORTE.inicial" id="sorte-ini" min="0" placeholder="50"> </td>
-            <td> <input type="number" name="caracteristicas.status.SORTE.atual" id="sorte-atual" min="0" placeholder="50"> </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.status.SORTE.inicial"
+                    id="sorte-ini"
+                    min="0"
+                    placeholder="50"
+                    value="<%= caracteristicas?.status?.SORTE?.inicial ?? '' %>"
+                >
+            </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.status.SORTE.atual"
+                    id="sorte-atual"
+                    min="0"
+                    placeholder="50"
+                    value="<%= caracteristicas?.status?.SORTE?.atual ?? '' %>"
+                >
+            </td>
         </tr>
     </table>
+
     <!--Sanidade-->
     <table class="table">
         <tr>
@@ -50,8 +89,27 @@
         </tr>
         <tr>
             <td>Sanidade</td>
-            <td> <input type="number" name="caracteristicas.sanidade.inicial" id="san-ini" min="0" placeholder="50"> </td>
-            <td> <input type="number" name="caracteristicas.sanidade.atual" id="san-atual" min="0" placeholder="50" oninput="CalculaSanMax(); CalculaInsanidade(); VerificaSan()"> </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.sanidade.inicial"
+                    id="san-ini"
+                    min="0"
+                    placeholder="50"
+                    value="<%= caracteristicas?.sanidade?.inicial ?? '' %>"
+                >
+            </td>
+            <td>
+                <input
+                    type="number"
+                    name="caracteristicas.sanidade.atual"
+                    id="san-atual"
+                    min="0"
+                    placeholder="50"
+                    oninput="CalculaSanMax(); CalculaInsanidade(); VerificaSan()"
+                    value="<%= caracteristicas?.sanidade?.atual ?? '' %>"
+                >
+            </td>
             <td class="insan"></td>
         </tr>
     </table>

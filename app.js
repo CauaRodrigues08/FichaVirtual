@@ -7,18 +7,18 @@ const PORT = 8000;
 require('dotenv').config();
 const dbURI = process.env.DB_URI;
 const mongoose = require('mongoose');
+const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const sobreRouter = require('./routes/sobre');
 const contatoRouter = require('./routes/contato');
 const criarRouter = require('./routes/criar');
 const fichasRouter = require('./routes/fichas');
-const bodyParser = require('body-parser');
 
 const app = express();
 
-app.use(bodyParser.json());
 app.use(express.urlencoded({ extended: true }));
+app.use(methodOverride('_method'));
 
 mongoose.connect(dbURI)
     .then(() => console.log('MongoDB conectado!'))
@@ -30,7 +30,6 @@ app.set('view engine', 'ejs');
 
 app.use(logger('dev'));
 app.use(express.json());
-app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 

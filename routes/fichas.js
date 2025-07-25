@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const Sheet = require('../models/sheet');
+const { checkboxPaths, setMissingCheckboxes } = require('../utils/checkboxPaths');
 
 //Para carregar a lista de fichas
 router.get('/', async (req, res) => {
@@ -20,14 +21,53 @@ router.get('/', async (req, res) => {
 });
 
 //Para carregar uma ficha específica
-router.get('/:id', (req, res) => {
-  const fichaId = req.params.id;
-  res.render('ficha', {
-    title: 'Ficha de ' + fichaId,
-    id: fichaId,
-    styles: ['/stylesheets/style.css'],
-    scripts: ['/javascripts/hp.js', '/javascripts/mp.js', '/javascripts/sanidade.js', '/javascripts/skills.js'] 
-  });
+router.get('/:id', async (req, res) => {
+  try {
+    const sheet = await Sheet.findById(req.params.id);
+    if (!sheet) return res.status(404).send('Ficha não encontrada');
+
+    res.render('criar', {
+      title: 'Ficha de ' + sheet.informacoes.nome,
+      styles: ['/stylesheets/style.css'],
+      scripts: [
+        '/javascripts/hp.js',
+        '/javascripts/mp.js', 
+        '/javascripts/sanidade.js', 
+        '/javascripts/skills.js'
+      ],
+      formAction: `/fichas/${sheet._id}?_method=PUT`,
+      sheet
+    });
+  } catch (err) {
+    console.error(err);
+    res.status(400).send('ID inválido');
+  }
+});
+
+
+// Para atualizar dados da ficha
+router.put('/:id', async (req, res) => {
+  setMissingCheckboxes(req.body, checkboxPaths);
+
+  try {
+    const sheetId = req.params.id;
+    const updateData = req.body;
+
+    const updatedSheet = await Sheet.findByIdAndUpdate(
+      sheetId,
+      updateData,
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedSheet) {
+      return res.status(404).send('Ficha não encontrada');
+    }
+
+    res.redirect(`/fichas/${updatedSheet._id}`);
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao atualizar ficha');
+  }
 });
 
 module.exports = router;
