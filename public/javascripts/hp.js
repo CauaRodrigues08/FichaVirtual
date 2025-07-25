@@ -15,8 +15,8 @@ function CalculaHpMax() {
 
 //Verifica o hp
 function VerificaHp(){
-hpAt = parseInt(document.querySelector('#hp-atual').textContent);
-hpMax = parseInt(document.querySelector('#hp-max').textContent);
+hpAt = parseInt(document.querySelector('#hp-atual').value);
+hpMax = parseInt(document.querySelector('.hp-max').innerHTML);
 if (hpAt > hpMax) {
     hpAt = hpMax
     }

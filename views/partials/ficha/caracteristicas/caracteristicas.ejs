@@ -11,7 +11,7 @@
         <tr>
             <td>HP</td>
             <td class="hp-max"></td>
-            <td> <input type="number" id="hp-atual" min="0" oninput="VerificaHp()"> </td>
+            <td> <input type="number" name="caracteristicas.hp" id="hp-atual" min="0" oninput="VerificaHp()"> </td>
         </tr>
     </table>
     <!--MP-->
@@ -24,7 +24,7 @@
         <tr>
             <td>MP</td>
             <td class="mp-max"></td>
-            <td> <input type="number" id="mp-atual" min="0" oninput="VerificaMp()"> </td>
+            <td> <input type="number" name="caracteristicas.mp" id="mp-atual" min="0" oninput="VerificaMp()"> </td>
         </tr>
     </table>
     <!--Sorte-->
@@ -36,8 +36,8 @@
         </tr>
         <tr>
             <td>Sorte</td>
-            <td> <input type="number" id="sorte-ini" min="0" placeholder="50"> </td>
-            <td> <input type="number" id="sorte-atual" min="0" placeholder="50"> </td>
+            <td> <input type="number" name="caracteristicas.status.SORTE.inicial" id="sorte-ini" min="0" placeholder="50"> </td>
+            <td> <input type="number" name="caracteristicas.status.SORTE.atual" id="sorte-atual" min="0" placeholder="50"> </td>
         </tr>
     </table>
     <!--Sanidade-->
@@ -50,8 +50,8 @@
         </tr>
         <tr>
             <td>Sanidade</td>
-            <td> <input type="number" id="san-ini" min="0" placeholder="50"> </td>
-            <td> <input type="number" id="san-atual" min="0" placeholder="50" oninput="CalculaSanMax(); CalculaInsanidade(); VerificaSan()"> </td>
+            <td> <input type="number" name="caracteristicas.sanidade.inicial" id="san-ini" min="0" placeholder="50"> </td>
+            <td> <input type="number" name="caracteristicas.sanidade.atual" id="san-atual" min="0" placeholder="50" oninput="CalculaSanMax(); CalculaInsanidade(); VerificaSan()"> </td>
             <td class="insan"></td>
         </tr>
     </table>

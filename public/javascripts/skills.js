@@ -12,7 +12,7 @@ function AtualizaAtributo(input) {
 
 function atualizarHabilidadesRelacionadas() {
     const valorDes = parseInt(document.querySelector('#valor-des')?.value || 0);
-    const esquivaInput = document.querySelector('input[data-skill-name="Esquiva"]');
+    const esquivaInput = document.querySelector('input[name="habilidades.esquiva.valor"]');
     if (esquivaInput) {
         // Atualiza o min para Esquiva (metade do valor de Destreza)
         esquivaInput.setAttribute('min', Math.floor(valorDes / 2));
@@ -24,7 +24,7 @@ function atualizarHabilidadesRelacionadas() {
         }
 
     const valorEdu = parseInt(document.querySelector('#valor-edu')?.value || 0);
-    const idiomaInput = document.querySelector('input[data-skill-name="Idioma-Nativo"]');
+    const idiomaInput = document.querySelector('input[name="habilidades.idiomaNativo.valor"]');
     if (idiomaInput) {
         // Atualiza o min para Idioma (Nativo) com o valor de Educação
         idiomaInput.setAttribute('min', valorEdu);
@@ -37,117 +37,112 @@ function atualizarHabilidadesRelacionadas() {
 
 //Habilidades de call of cthulhu 7th edition
 const skills = [
-    {nome: "Antropologia", valorBase: 1},
-    {nome: "Arco (Armas de Fogo)", valorBase: 15},
-    {nome: "Armas pesadas (Armas de fogo)", valorBase: 10},
-    {nome: "Arqueologia", valorBase: 1},
-    {nome: "Artilharia", valorBase: 1},
-    {nome: "Astronomia (Ciência)", valorBase: 1},
-    {nome: "Atuação (Arte/Artesanato)", valorBase: 5},
-    {nome: "Avaliação", valorBase: 5},
-    {nome: "Belas Artes (Arte/Artesanato)", valorBase: 5},
-    {nome: "Biologia (Ciência)", valorBase: 1},
-    {nome: "Botânica (Ciência)", valorBase: 1},
-    {nome: "Briga (Luta)", valorBase: 25},
-    {nome: "Charme", valorBase: 15},
-    {nome: "Chaveiro", valorBase: 1},
-    {nome: "Chicote", valorBase: 5},
-    {nome: "Contabilidade", valorBase: 5},
-    {nome: "Crédito", valorBase: 0},
-    {nome: "Criptografia (Ciência)", valorBase: 1},
-    {nome: "Cthulhu Mythos", valorBase: 0},
-    {nome: "Demolição", valorBase: 1},
-    {nome: "Dirigir veículo", valorBase: 20},
-    {nome: "Disfarce", valorBase: 5},
-    {nome: "Encontrar", valorBase: 25},
-    {nome: "Escalar", valorBase: 20},
-    {nome: "Escutar", valorBase: 20},
-    {nome: "Espada (Luta)", valorBase: 20},
-    {nome: "Espingarda (Armas de fogo)", valorBase: 25},
-    {nome: "Esquiva", valorBase: 0},
-    {nome: "Falsificação (Arte/Artesanato", valorBase: 5},
-    {nome: "Farmácia (Ciência)", valorBase: 1},
-    {nome: "Fotografia (Arte/Artesanato)", valorBase: 5},
-    {nome: "Furtividade", valorBase: 20},
-    {nome: "Garrote (Luta)", valorBase: 15},
-    {nome: "Geologia (Ciência)", valorBase: 1},
-    {nome: "Hipnose", valorBase: 1},
-    {nome: "História", valorBase: 5},
-    {nome: "Idioma (Nativo)", valorBase: 0},
-    {nome: "Idioma (outro)", valorBase: 1},
-    {nome: "Intimidação", valorBase: 15},
-    {nome: "Lábia", valorBase: 5},
-    {nome: "Lança (Luta)", valorBase: 20},
-    {nome: "Lança-chamas (Arma de Fogo)", valorBase: 10},
-    {nome: "Lançar", valorBase: 20},
-    {nome: "Lei", valorBase: 5},
-    {nome: "Leitura Labial", valorBase: 1},
-    {nome: "Machado (Luta)", valorBase: 15},
-    {nome: "Mangual (Luta)", valorBase: 10},
-    {nome: "Maquinas pesadas", valorBase: 1},
-    {nome: "Manejo de Animais", valorBase: 5},
-    {nome: "Matemática (Ciência)", valorBase: 1},
-    {nome: "Medicina", valorBase: 1},
-    {nome: "Mergulho", valorBase: 1},
-    {nome: "Meteorologia (Ciência)", valorBase: 1},
-    {nome: "Metralhadora (Armas de fogo)", valorBase: 10},
-    {nome: "Motosserra (Luta)", valorBase: 10},
-    {nome: "Mundo Natural", valorBase: 10},
-    {nome: "Nadar", valorBase: 20},
-    {nome: "Navegação", valorBase: 10},
-    {nome: "Ocultismo", valorBase: 5},
-    {nome: "Perícia Forense", valorBase: 1},
-    {nome: "Persuasão", valorBase: 10},
-    {nome: "Pilotar", valorBase: 1},
-    {nome: "Pistola (Armas de fogo)", valorBase: 20},
-    {nome: "Presdigitação", valorBase: 10},
-    {nome: "Primeiros Socorros", valorBase: 30},
-    {nome: "Psicanálise", valorBase: 1},
-    {nome: "Psicologia", valorBase: 10},
-    {nome: "Química (Ciência)", valorBase: 1},
-    {nome: "Rastrear", valorBase: 10},
-    {nome: "Reparo elétrico", valorBase: 10},
-    {nome: "Reparo mecânico", valorBase: 10},
-    {nome: "Rifle (Armas de fogo)", valorBase: 25},
-    {nome: "Saltar", valorBase: 20},
-    {nome: "Sobrevivência", valorBase: 10},
-    {nome: "Submetralhadora (Armas de Fogo)", valorBase: 15},
-    {nome: "Uso de biblioteca", valorBase: 20},
-    {nome: "Uso de computadores", valorBase: 5},
-    {nome: "Zoologia (Ciência)", valorBase: 1}    
+    {nome: "Antropologia", valorBase: 1, key: "antropologia"},
+    {nome: "Arco (Armas de Fogo)", valorBase: 15, key: "arco"},
+    {nome: "Armas pesadas (Armas de fogo)", valorBase: 10, key: "armasPesadas"},
+    {nome: "Arqueologia", valorBase: 1, key: "arqueologia"},
+    {nome: "Artilharia", valorBase: 1, key: "artilharia"},
+    {nome: "Astronomia (Ciência)", valorBase: 1, key: "astronomia"},
+    {nome: "Atuação (Arte/Artesanato)", valorBase: 5, key: "atuacao"},
+    {nome: "Avaliação", valorBase: 5, key: "avaliacao"},
+    {nome: "Belas Artes (Arte/Artesanato)", valorBase: 5, key: "belasArtes"},
+    {nome: "Biologia (Ciência)", valorBase: 1, key: "biologia"},
+    {nome: "Botânica (Ciência)", valorBase: 1, key: "botanica"},
+    {nome: "Briga (Luta)", valorBase: 25, key: "briga"},
+    {nome: "Charme", valorBase: 15, key: "charme"},
+    {nome: "Chaveiro", valorBase: 1, key: "chaveiro"},
+    {nome: "Chicote", valorBase: 5, key: "chicote"},
+    {nome: "Contabilidade", valorBase: 5, key: "contabilidade"},
+    {nome: "Crédito", valorBase: 0, key: "credito"},
+    {nome: "Criptografia (Ciência)", valorBase: 1, key: "criptografia"},
+    {nome: "Cthulhu Mythos", valorBase: 0, key: "cthulhuMythos"},
+    {nome: "Demolição", valorBase: 1, key: "demolicao"},
+    {nome: "Dirigir veículo", valorBase: 20, key: "dirigir"},
+    {nome: "Disfarce", valorBase: 5, key: "disfarce"},
+    {nome: "Encontrar", valorBase: 25, key: "encontrar"},
+    {nome: "Escalar", valorBase: 20, key: "escalar"},
+    {nome: "Escutar", valorBase: 20, key: "escutar"},
+    {nome: "Espada (Luta)", valorBase: 20, key: "espada"},
+    {nome: "Espingarda (Armas de fogo)", valorBase: 25, key: "espingarda"},
+    {nome: "Esquiva", valorBase: 0, key: "esquiva"},
+    {nome: "Falsificação (Arte/Artesanato", valorBase: 5, key: "falsificacao"},
+    {nome: "Farmácia (Ciência)", valorBase: 1, key: "farmacia"},
+    {nome: "Fotografia (Arte/Artesanato)", valorBase: 5, key: "fotografia"},
+    {nome: "Furtividade", valorBase: 20, key: "furtividade"},
+    {nome: "Garrote (Luta)", valorBase: 15, key: "garrote"},
+    {nome: "Geologia (Ciência)", valorBase: 1, key: "geologia"},
+    {nome: "Hipnose", valorBase: 1, key: "hipnose"},
+    {nome: "História", valorBase: 5, key: "historia"},
+    {nome: "Idioma (Nativo)", valorBase: 0, key: "idiomaNativo"},
+    {nome: "Idioma (outro)", valorBase: 1, key: "idiomaOutro"},
+    {nome: "Intimidação", valorBase: 15, key: "intimidacao"},
+    {nome: "Lábia", valorBase: 5, key: "labia"},
+    {nome: "Lança (Luta)", valorBase: 20, key: "lanca"},
+    {nome: "Lança-chamas (Arma de Fogo)", valorBase: 10, key: "lancaChamas"},
+    {nome: "Lançar", valorBase: 20, key: "lancar"},
+    {nome: "Lei", valorBase: 5, key: "lei"},
+    {nome: "Leitura Labial", valorBase: 1, key: "leituraLabial"},
+    {nome: "Machado (Luta)", valorBase: 15, key: "machado"},
+    {nome: "Mangual (Luta)", valorBase: 10, key: "mangual"},
+    {nome: "Maquinas pesadas", valorBase: 1, key: "maquinasPesadas"},
+    {nome: "Manejo de Animais", valorBase: 5, key: "manejoAnimais"},
+    {nome: "Matemática (Ciência)", valorBase: 1, key: "matematica"},
+    {nome: "Medicina", valorBase: 1, key: "medicina"},
+    {nome: "Mergulho", valorBase: 1, key: "mergulho"},
+    {nome: "Meteorologia (Ciência)", valorBase: 1, key: "meteorologia"},
+    {nome: "Metralhadora (Armas de fogo)", valorBase: 10, key: "metralhadora"},
+    {nome: "Motosserra (Luta)", valorBase: 10, key: "motosserra"},
+    {nome: "Mundo Natural", valorBase: 10, key: "mundoNatural"},
+    {nome: "Nadar", valorBase: 20, key: "nadar"},
+    {nome: "Navegação", valorBase: 10, key: "navegacao"},
+    {nome: "Ocultismo", valorBase: 5, key: "ocultismo"},
+    {nome: "Perícia Forense", valorBase: 1, key: "pericia"},
+    {nome: "Persuasão", valorBase: 10, key: "persuasao"},
+    {nome: "Pilotar", valorBase: 1, key: "pilotar"},
+    {nome: "Pistola (Armas de fogo)", valorBase: 20, key: "pistola"},
+    {nome: "Presdigitação", valorBase: 10, key: "presdigitacao"},
+    {nome: "Primeiros Socorros", valorBase: 30, key: "primeirosSocorros"},
+    {nome: "Psicanálise", valorBase: 1, key: "psicanalise"},
+    {nome: "Psicologia", valorBase: 10, key: "psicologia"},
+    {nome: "Química (Ciência)", valorBase: 1, key: "quimica"},
+    {nome: "Rastrear", valorBase: 10, key: "rastrear"},
+    {nome: "Reparo elétrico", valorBase: 10, key: "reparoEletrico"},
+    {nome: "Reparo mecânico", valorBase: 10, key: "reparoMecanico"},
+    {nome: "Rifle (Armas de fogo)", valorBase: 25, key: "rifle"},
+    {nome: "Saltar", valorBase: 20, key: "saltar"},
+    {nome: "Sobrevivência", valorBase: 10, key: "sobrevivencia"},
+    {nome: "Submetralhadora (Armas de Fogo)", valorBase: 15, key: "submetralhadora"},
+    {nome: "Uso de biblioteca", valorBase: 20, key: "biblioteca"},
+    {nome: "Uso de computadores", valorBase: 5, key: "computadores"},
+    {nome: "Zoologia (Ciência)", valorBase: 1, key: "zoologia"}    
 ];
 
 // Carrega as habilidades na tabela
 function carregarSkills() {
-    const tabela = document.querySelector('#tabela-hab tbody'); // Seleciona o corpo da tabela
+    const tabela = document.querySelector('#tabela-hab tbody');
 
     skills.forEach(skill => {
-        // Cria a linha para cada habilidade
         const row = document.createElement('tr');
 
-        // Preenche a linha com as células
         row.innerHTML = `
-            <td><input type="checkbox" /></td>
+            <td>
+                <input type="checkbox" name="habilidades.${skill.key}.melhorar" />
+            </td>
             <td>${skill.nome}</td>
             <td>
                 <input 
                     type="number" 
                     class="valor-normal" 
+                    name="habilidades.${skill.key}.valor"
                     value="${skill.valorBase}" 
                     oninput="AtualizaAtributo(this)"
-                    min=0
+                    min="0"
                 />
             </td>
             <td class="valor-bom">${Math.floor(skill.valorBase / 2)}</td>
             <td class="valor-extremo">${Math.floor(skill.valorBase / 5)}</td>
         `;
-        const input = row.querySelector('.valor-normal');
-        input.setAttribute(
-            'data-skill-name',
-            skill.nome.replace(/\s+/g, '-').replace(/[^\w-]/g, '')
-        );
 
-        // Adiciona a linha na tabela
         tabela.appendChild(row);
     });
 }
@@ -190,34 +185,40 @@ function PesquiseSkill() {
 };
 
 //Adiciona os valores de briga na seção de combate
-function AdicionaValorBriga(){
-    const brigaNormalInput = document.querySelector('input[data-skill-name="Briga-Luta"]');
+function AdicionaValorBriga() {
+    const brigaNormalInput = document.querySelector('input[name="habilidades.briga.valor"]');
     
-    const brigaNormal = brigaNormalInput.value;
-    const brigaBom = Math.floor(brigaNormal / 2);
-    const brigaExtremo = Math.floor(brigaNormal / 5);
+    if (brigaNormalInput) {
+        const brigaNormal = brigaNormalInput.value;
+        const brigaBom = Math.floor(brigaNormal / 2);
+        const brigaExtremo = Math.floor(brigaNormal / 5);
 
-    document.querySelector('#briga-normal').textContent = brigaNormal;
-    document.querySelector('#briga-bom').textContent = brigaBom;
-    document.querySelector('#briga-extremo').textContent = brigaExtremo;
-};
+        document.querySelector('#briga-normal').textContent = brigaNormal;
+        document.querySelector('#briga-bom').textContent = brigaBom;
+        document.querySelector('#briga-extremo').textContent = brigaExtremo;
+    } else {
+        console.error("Input with name='Briga-Luta' not found!");
+    }
+}
 
-//Evento que adiciona os valores de Briga na seção de Combate
-document.addEventListener('DOMContentLoaded', AdicionaValorBriga);
-
-//Adicona eventos em Briga
+//Adiciona os eventos responsáveis por adicionar o valor de briga na seção de combate
 document.addEventListener('DOMContentLoaded', () => {
-    const inputBriga = document.querySelector('input[data-skill-name="Briga-Luta"]');
+    
+    AdicionaValorBriga();
 
+    const inputBriga = document.querySelector('input[name="habilidades.briga.valor"]');
     if (inputBriga) {
-        inputBriga.addEventListener('input', AdicionaValorBriga)
+        inputBriga.addEventListener('input', AdicionaValorBriga);
+    } else {
+        console.error("Input with name='Briga-Luta' not found!");
     }
 });
+
 
 //Calcula e adiciona o valor de esquiva na tabela de esquiva da seção da combate
 //Nota: Atualmente, a tabela não atualiza senão mediante input. Precisa ser corrigido.
 function AdicionaValorEsquiva() {
-    const esquivaNormalInput = document.querySelector('input[data-skill-name="Esquiva"]');
+    const esquivaNormalInput = document.querySelector('input[name="habilidades.esquiva.valor"]');
 
     const esquivaNormal = esquivaNormalInput.value;
     const esquivaBom = Math.floor(esquivaNormal / 2);
@@ -230,7 +231,7 @@ function AdicionaValorEsquiva() {
 
 //Adiciona o evento responsável por acionar a função AdicionaValorEsquiva
 document.addEventListener('DOMContentLoaded', () => {
-    const inputEsquiva = document.querySelector('input[data-skill-name="Esquiva"]');
+    const inputEsquiva = document.querySelector('input[name="habilidades.esquiva.valor"]');
 
     if (inputEsquiva) {
         inputEsquiva.addEventListener('input', AdicionaValorEsquiva)
@@ -311,3 +312,27 @@ function CalculaMov() {
 
     document.querySelector('#mov-display').textContent = valorMov;
 }
+
+function atualizarValoresCombate() {
+    // Faz um loop por cada arma
+    for (let i = 1; i <= 3; i++) {
+        
+        const normalValue = document.getElementById(`normal-arma${i}`).value;
+
+        const bomValue = normalValue ? Math.floor(normalValue / 2) : 0;
+        const extremoValue = normalValue ? Math.floor(normalValue / 5) : 0;
+
+        document.getElementById(`bom-arma${i}`).innerText = bomValue;
+        document.getElementById(`extremo-arma${i}`).innerText = extremoValue;
+    }
+}
+
+//Adiciona eventos em cada input do valor de arma e chama a função ao carregar a página
+document.addEventListener('DOMContentLoaded', () => {
+    
+    atualizarValoresCombate();
+
+    document.querySelectorAll('[id^="normal-arma"]').forEach(input => {
+        input.addEventListener('input', atualizarValoresCombate);
+    });
+});

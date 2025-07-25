@@ -15,7 +15,7 @@ function CalculaMpMax() {
 //Verifica o mp
 function VerificaMp(){
     mpAt = parseInt(document.querySelector('#mp-atual').textContent);
-    mpMax = parseInt(document.querySelector('#mp-max').textContent);
+    mpMax = parseInt(document.querySelector('.mp-max').textContent);
     if (mpAt > mpMax) {
         mpAt = mpMax
         }

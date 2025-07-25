@@ -102,6 +102,7 @@ const sheetSchema = new mongoose.Schema ({
         persuasao: {valor: Number, melhorar: {type: Boolean, default: false}},
         pilotar: {valor: Number, melhorar: {type: Boolean, default: false}},
         pistola: {valor: Number, melhorar: {type: Boolean, default: false}},
+        presdigitacao: {valor: Number, melhorar: {type: Boolean, default: false}},
         primeirosSocorros: {valor: Number, melhorar: {type: Boolean, default: false}},
         psicanalise: {valor: Number, melhorar: {type: Boolean, default: false}},
         psicologia: {valor: Number, melhorar: {type: Boolean, default: false}},
@@ -155,7 +156,7 @@ const sheetSchema = new mongoose.Schema ({
         pessoas: String,
         fobias: String,
         locais: String,
-        feitiços: String,
+        feiticos: String,
         pertences: String,
         encontros: String,
         inventario: String
