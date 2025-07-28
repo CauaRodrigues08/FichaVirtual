@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const Sheet = require('../models/sheet');
 const { checkboxPaths, setMissingCheckboxes } = require('../utils/checkboxPaths');
+const flat = require('flat');
 
 //Para carregar a lista de fichas
 router.get('/', async (req, res) => {
@@ -51,7 +52,8 @@ router.put('/:id', async (req, res) => {
 
   try {
     const sheetId = req.params.id;
-    const updateData = req.body;
+    const updateData = flat.flatten(req.body);
+    
 
     const updatedSheet = await Sheet.findByIdAndUpdate(
       sheetId,
@@ -66,7 +68,7 @@ router.put('/:id', async (req, res) => {
     res.redirect(`/fichas/${updatedSheet._id}`);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Erro ao atualizar ficha');
+    res.status(500).send('Erro ao atualizar ficha :' + err + '\n' + JSON.stringify(req.body, null, 2));
   }
 });
 

@@ -32,37 +32,39 @@
                             <td>---</td>
                         </tr>
                         <tr>
-                            <td><textarea name="combate.arma1.nome" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma1.valor" id="normal-arma1" min="0"></td>
-                            <td id="bom-arma1" min="0"></td>
-                            <td id="extremo-arma1" min="0"></td>
-                            <td><textarea name="combate.arma1.dano" id="dano-arma1" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma1.ataques" id="arma1-ats" min="0"></td>
-                            <td><input type="number" name="combate.arma1.alcance" id="arma1-alc" min="0"></td>
-                            <td><input type="number" name="combate.arma1.pente" id="arma1-pente" min="0"></td>
-                            <td><input type="number" name="combate.arma1.falha" id="arma1-falha" min="0"></td>
+                            <td><textarea name="combate.arma1.nome" class="arma-textarea"><%= combate?.arma1?.nome ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma1.valor" id="normal-arma1" min="0" value="<%= combate?.arma1?.valor ?? '' %>"></td>
+                            <td id="bom-arma1"><%= Math.floor((combate?.arma1?.valor ?? 0) / 2) %></td>
+                            <td id="extremo-arma1"><%= Math.floor((combate?.arma1?.valor ?? 0) / 5) %></td>
+                            <td><textarea name="combate.arma1.dano" id="dano-arma1" class="arma-textarea"><%= combate?.arma1?.dano ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma1.ataques" id="arma1-ats" min="0" value="<%= combate?.arma1?.ataques ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma1.alcance" id="arma1-alc" min="0" value="<%= combate?.arma1?.alcance ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma1.pente" id="arma1-pente" min="0" value="<%= combate?.arma1?.pente ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma1.falha" id="arma1-falha" min="0" value="<%= combate?.arma1?.falha ?? '' %>"></td>
+                        </tr>
                         </tr>
                         <tr>
-                            <td><textarea name="combate.arma2.nome" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma2.valor" id="normal-arma2" min="0"></td>
-                            <td id="bom-arma2" min="0"></td>
-                            <td id="extremo-arma2" min="0"></td>
-                            <td><textarea name="combate.arma2.dano" id="dano-arma2" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma2.ataques" id="arma2-ats" min="0"></td>
-                            <td><input type="number" name="combate.arma2.alcance" id="arma2-alc" min="0"></td>
-                            <td><input type="number" name="combate.arma2.pente" id="arma2-pente" min="0"></td>
-                            <td><input type="number" name="combate.arma2.falha" id="arma2-falha" min="0"></td>
+                            <td><textarea name="combate.arma2.nome" class="arma-textarea"><%= combate?.arma2?.nome ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma2.valor" id="normal-arma2" min="0" value="<%= combate?.arma2?.valor ?? '' %>"></td>
+                            <td id="bom-arma2"><%= Math.floor((combate?.arma2?.valor ?? 0) / 2) %></td>
+                            <td id="extremo-arma2"><%= Math.floor((combate?.arma2?.valor ?? 0) / 5) %></td>
+                            <td><textarea name="combate.arma2.dano" id="dano-arma2" class="arma-textarea"><%= combate?.arma2?.dano ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma2.ataques" id="arma2-ats" min="0" value="<%= combate?.arma2?.ataques ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma2.alcance" id="arma2-alc" min="0" value="<%= combate?.arma2?.alcance ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma2.pente" id="arma2-pente" min="0" value="<%= combate?.arma2?.pente ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma2.falha" id="arma2-falha" min="0" value="<%= combate?.arma2?.falha ?? '' %>"></td>
+                        </tr>
                         </tr>
                         <tr>
-                            <td><textarea name="combate.arma3.nome" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma3.valor" id="normal-arma3" min="0"></td>
-                            <td id="bom-arma3" min="0"></td>
-                            <td id="extremo-arma3" min="0"></td>
-                            <td><textarea name="combate.arma3.dano" id="dano-arma3" class="arma-textarea"></textarea></td>
-                            <td><input type="number" name="combate.arma3.ataques" id="arma3-ats" min="0"></td>
-                            <td><input type="number" name="combate.arma3.alcance" id="arma3-alc" min="0"></td>
-                            <td><input type="number" name="combate.arma3.pente" id="arma3-pente" min="0"></td>
-                            <td><input type="number" name="combate.arma3.falha" id="arma3-falha" min="0"></td>
+                            <td><textarea name="combate.arma3.nome" class="arma-textarea"><%= combate?.arma3?.nome ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma3.valor" id="normal-arma3" min="0" value="<%= combate?.arma3?.valor ?? '' %>"></td>
+                            <td id="bom-arma3"><%= Math.floor((combate?.arma3?.valor ?? 0) / 2) %></td>
+                            <td id="extremo-arma3"><%= Math.floor((combate?.arma3?.valor ?? 0) / 5) %></td>
+                            <td><textarea name="combate.arma3.dano" id="dano-arma3" class="arma-textarea"><%= combate?.arma3?.dano ?? '' %></textarea></td>
+                            <td><input type="number" name="combate.arma3.ataques" id="arma3-ats" min="0" value="<%= combate?.arma3?.ataques ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma3.alcance" id="arma3-alc" min="0" value="<%= combate?.arma3?.alcance ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma3.pente" id="arma3-pente" min="0" value="<%= combate?.arma3?.pente ?? '' %>"></td>
+                            <td><input type="number" name="combate.arma3.falha" id="arma3-falha" min="0" value="<%= combate?.arma3?.falha ?? '' %>"></td>
                         </tr>
                     </tbody>
                 </table>

@@ -8,15 +8,15 @@
         </tr>
         <tr>
             <th>Nível de gasto</th>
-            <td><input type="number" name="nivelGasto" id="nivel-gasto"></td>
+            <td><input type="number" name="economias.nivelGasto" value="<%= economias?.nivelGasto ?? '' %>" id="nivel-gasto"></td>
         </tr>
         <tr>
             <th>Dinheiro</th>
-            <td><input type="number" name="dinheiro" id="persona-din"></td>
+            <td><input type="number" name="economias.dinheiro" value="<%= economias?.dinheiro ?? '' %>" id="persona-din"></td>
         </tr>
         <tr>
             <th>Ativos</th>
-            <td><textarea class="form-control" name="ativos" id="persona-ativ" rows="5" placeholder="Seus bens, economias, etc."></textarea></td>
+            <td><textarea class="form-control" name="economias.ativos" id="persona-ativ" rows="5" placeholder="Seus bens, economias, etc."><%= economias?.ativos ?? '' %></textarea></td>
         </tr>
     </table>
 </div>

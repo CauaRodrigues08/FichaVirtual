@@ -9,27 +9,27 @@
 <%- include('./partials/ficha/caracteristicas/caracteristicas', {caracteristicas: sheet?.caracteristicas}) %>
 <%- include('./partials/ficha/caracteristicas/estados', {caracteristicas: sheet?.caracteristicas}) %>
 
-<%- include('./partials/ficha/tab-habilidades', sheet) %>
+<%- include('./partials/ficha/tab-habilidades', {habilidades: sheet?.habilidades}) %>
 
-<%- include('./partials/ficha/combate/armas', sheet) %>
-<%- include('./partials/ficha/combate/combate-valores', sheet) %>
+<%- include('./partials/ficha/combate/armas', {combate: sheet?.combate}) %>
+<%- include('./partials/ficha/combate/combate-valores') %>
 
-<%- include('./partials/ficha/historia/historia', sheet) %>
-<%- include('./partials/ficha/historia/descricao', sheet) %>
-<%- include('./partials/ficha/historia/tracos', sheet) %>
-<%- include('./partials/ficha/historia/crencas', sheet) %>
-<%- include('./partials/ficha/historia/feridas', sheet) %>
-<%- include('./partials/ficha/historia/pessoas', sheet) %>
-<%- include('./partials/ficha/historia/fobias', sheet) %>
-<%- include('./partials/ficha/historia/locais', sheet) %>
-<%- include('./partials/ficha/historia/feiticos', sheet) %>
-<%- include('./partials/ficha/historia/pertences', sheet) %>
-<%- include('./partials/ficha/historia/encontros', sheet) %>
-<%- include('./partials/ficha/historia/inventario', sheet) %>
+<%- include('./partials/ficha/historia/historia', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/descricao', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/tracos', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/crencas', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/feridas', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/pessoas', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/fobias', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/locais', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/feiticos', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/pertences', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/encontros', {historia: sheet?.historia}) %>
+<%- include('./partials/ficha/historia/inventario', {historia: sheet?.historia}) %>
 
-<%- include('./partials/ficha/economia', sheet) %>
+<%- include('./partials/ficha/economia', {economias: sheet?.economias}) %>
 
-<%- include('./partials/ficha/notas', sheet) %>
+<%- include('./partials/ficha/notas', {notas: sheet?.notas}) %>
 
 </form>
 

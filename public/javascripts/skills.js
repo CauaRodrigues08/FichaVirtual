@@ -122,11 +122,17 @@ function carregarSkills() {
     const tabela = document.querySelector('#tabela-hab tbody');
 
     skills.forEach(skill => {
-        const row = document.createElement('tr');
+        const habilidadeSalva = habilidadesData[skill.key] || {};
+        console.log(skill.key, habilidadeSalva);
+        const valor = habilidadeSalva.valor ?? skill.valorBase;
+        const checked = habilidadeSalva.melhorar === 'true' ? 'checked' : '';
 
+
+
+        const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <input type="checkbox" name="habilidades.${skill.key}.melhorar" />
+                <input type="checkbox" name="habilidades.${skill.key}.melhorar" value="true" ${checked} />
             </td>
             <td>${skill.nome}</td>
             <td>
@@ -134,18 +140,19 @@ function carregarSkills() {
                     type="number" 
                     class="valor-normal" 
                     name="habilidades.${skill.key}.valor"
-                    value="${skill.valorBase}" 
+                    value="${valor}" 
                     oninput="AtualizaAtributo(this)"
                     min="0"
                 />
             </td>
-            <td class="valor-bom">${Math.floor(skill.valorBase / 2)}</td>
-            <td class="valor-extremo">${Math.floor(skill.valorBase / 5)}</td>
+            <td class="valor-bom">${Math.floor(valor / 2)}</td>
+            <td class="valor-extremo">${Math.floor(valor / 5)}</td>
         `;
 
         tabela.appendChild(row);
     });
 }
+
 
 //Adiciona eventos em Destreza e Educação
 document.addEventListener('DOMContentLoaded', () => {
