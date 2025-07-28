@@ -67,16 +67,15 @@ function normalizeBooleans(obj) {
 // Para atualizar dados da ficha
 router.put('/:id', async (req, res) => {
   try {
-    // 1) garante false para desmarcadas
+   
     setMissingCheckboxes(req.body, checkboxPaths);
 
-    // 2) normaliza arrays e strings booleanas
+    
     normalizeBooleans(req.body);
 
-    // 3) achata tudo num objeto de paths
+    
     const updateData = flat.flatten(req.body);
-
-    // 4) aplica o update (Mongoose faz wrap em $set)
+    
     const updatedSheet = await Sheet.findByIdAndUpdate(
       req.params.id,
       updateData,
