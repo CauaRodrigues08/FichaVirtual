@@ -1,3 +1,5 @@
+const _ = require('lodash');
+
 const checkboxPaths = [
   // todos os caminhos possíveis dos checkboxes (exemplo com lesãoGrave e algumas habilidades)
   'caracteristicas.estados.lesaoGrave',
@@ -23,20 +25,11 @@ const checkboxPaths = [
 ];
 
 function setMissingCheckboxes(body, paths) {
-  for (const path of paths) {
-    const keys = path.split('.');
-    let current = body;
-
-    for (let i = 0; i < keys.length - 1; i++) {
-      if (!current[keys[i]]) current[keys[i]] = {};
-      current = current[keys[i]];
+  paths.forEach(path => {
+    if (_.get(body, path) === undefined) {
+      _.set(body, path, false);
     }
-
-    const finalKey = keys[keys.length - 1];
-    if (current[finalKey] === undefined) {
-      current[finalKey] = '';
-    }
-  }
+  });
 }
 
 module.exports = {

@@ -125,14 +125,24 @@ function carregarSkills() {
         const habilidadeSalva = habilidadesData[skill.key] || {};
         console.log(skill.key, habilidadeSalva);
         const valor = habilidadeSalva.valor ?? skill.valorBase;
-        const checked = habilidadeSalva.melhorar === 'true' ? 'checked' : '';
+        const checked = habilidadeSalva.melhorar ? 'checked' : '';
 
 
 
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>
-                <input type="checkbox" name="habilidades.${skill.key}.melhorar" value="true" ${checked} />
+                <input 
+                    type="hidden" 
+                    name="habilidades.${skill.key}.melhorar" 
+                    value="false"
+                >
+                <input 
+                    type="checkbox" 
+                        name="habilidades.${skill.key}.melhorar" 
+                        value="true" 
+                        ${checked} 
+                    >
             </td>
             <td>${skill.nome}</td>
             <td>
@@ -143,7 +153,7 @@ function carregarSkills() {
                     value="${valor}" 
                     oninput="AtualizaAtributo(this)"
                     min="0"
-                />
+                >
             </td>
             <td class="valor-bom">${Math.floor(valor / 2)}</td>
             <td class="valor-extremo">${Math.floor(valor / 5)}</td>
@@ -343,3 +353,5 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', atualizarValoresCombate);
     });
 });
+
+module.exports = {skills};

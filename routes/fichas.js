@@ -45,18 +45,40 @@ router.get('/:id', async (req, res) => {
   }
 });
 
+function normalizeBooleans(obj) {
+  Object.keys(obj).forEach(key => {
+    const val = obj[key];
+
+    // Se for array, pega o último
+    if (Array.isArray(val)) {
+      obj[key] = val[val.length - 1];
+    }
+    // Se for objeto, recursa
+    else if (val !== null && typeof val === 'object') {
+      normalizeBooleans(val);
+    }
+    // Se for string true/false, converte
+    else if (val === 'true' || val === 'false') {
+      obj[key] = (val === 'true');
+    }
+  });
+}
 
 // Para atualizar dados da ficha
 router.put('/:id', async (req, res) => {
-  setMissingCheckboxes(req.body, checkboxPaths);
-
   try {
-    const sheetId = req.params.id;
-    const updateData = flat.flatten(req.body);
-    
+    // 1) garante false para desmarcadas
+    setMissingCheckboxes(req.body, checkboxPaths);
 
+    // 2) normaliza arrays e strings booleanas
+    normalizeBooleans(req.body);
+
+    // 3) achata tudo num objeto de paths
+    const updateData = flat.flatten(req.body);
+
+    // 4) aplica o update (Mongoose faz wrap em $set)
     const updatedSheet = await Sheet.findByIdAndUpdate(
-      sheetId,
+      req.params.id,
       updateData,
       { new: true, runValidators: true }
     );
@@ -64,11 +86,10 @@ router.put('/:id', async (req, res) => {
     if (!updatedSheet) {
       return res.status(404).send('Ficha não encontrada');
     }
-
     res.redirect(`/fichas/${updatedSheet._id}`);
   } catch (err) {
     console.error(err);
-    res.status(500).send('Erro ao atualizar ficha :' + err + '\n' + JSON.stringify(req.body, null, 2));
+    res.status(500).send('Erro ao atualizar ficha: ' + err.message);
   }
 });
 
