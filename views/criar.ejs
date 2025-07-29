@@ -12,7 +12,7 @@
 <%- include('./partials/ficha/tab-habilidades', {habilidades: sheet?.habilidades}) %>
 
 <%- include('./partials/ficha/combate/armas', {combate: sheet?.combate}) %>
-<%- include('./partials/ficha/combate/combate-valores') %>
+<%- include('./partials/ficha/combate/combate-valores', {caracteristicas: sheet?.caracteristicas, habilidades: sheet?.habilidades}) %>
 
 <%- include('./partials/ficha/historia/historia', {historia: sheet?.historia}) %>
 <%- include('./partials/ficha/historia/descricao', {historia: sheet?.historia}) %>

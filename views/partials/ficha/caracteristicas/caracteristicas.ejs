@@ -10,7 +10,9 @@
         </tr>
         <tr>
             <td>HP</td>
-            <td class="hp-max"></td>
+            <td class="hp-max">
+                <%= Math.floor((caracteristicas?.status?.CON ?? 0 + caracteristicas?.status?.TAM ?? 0) / 10) %>
+            </td>
             <td>
                 <input
                     type="number"
@@ -33,7 +35,9 @@
         </tr>
         <tr>
             <td>MP</td>
-            <td class="mp-max"></td>
+            <td class="mp-max">
+                <%= Math.floor((caracteristicas?.status?.POD ?? 0) / 5) %>
+            </td>
             <td>
                 <input
                     type="number"
@@ -110,7 +114,9 @@
                     value="<%= caracteristicas?.sanidade?.atual ?? '' %>"
                 >
             </td>
-            <td class="insan"></td>
+            <td class="insan">
+                <%= Math.floor((caracteristicas?.sanidade?.atual ?? 0) / 5) %>
+            </td>
         </tr>
     </table>
 </div>

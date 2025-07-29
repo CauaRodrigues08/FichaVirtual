@@ -19,100 +19,140 @@
             <tbody class="bg-transparent">
                 <tr>
                     <td>FOR</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.FOR" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this); CalculaMov()" 
-                               id="valor-for"
-                               value="<%= caracteristicas?.status?.FOR ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.FOR"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this); CalculaMov()"
+                             id="valor-for"
+                             value="<%= caracteristicas?.status?.FOR ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.FOR ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.FOR ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>CON</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.CON" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this); CalculaHpMax()" 
-                               id="valor-con"
-                               value="<%= caracteristicas?.status?.CON ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.CON"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this); CalculaHpMax()"
+                             id="valor-con"
+                             value="<%= caracteristicas?.status?.CON ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.CON ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.CON ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>DES</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.DES" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this); CalculaMov()" 
-                               id="valor-des"
-                               value="<%= caracteristicas?.status?.DES ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.DES"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this); CalculaMov()"
+                             id="valor-des"
+                             value="<%= caracteristicas?.status?.DES ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.DES ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.DES ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>INT</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.INT" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this)" 
-                               id="valor-int"
-                               value="<%= caracteristicas?.status?.INT ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.INT"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this)"
+                             id="valor-int"
+                             value="<%= caracteristicas?.status?.INT ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.INT ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.INT ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>TAM</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.TAM" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this); CalculaHpMax(); CalculaMov()" 
-                               id="valor-tam"
-                               value="<%= caracteristicas?.status?.TAM ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.TAM"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this); CalculaHpMax(); CalculaMov()"
+                             id="valor-tam"
+                             value="<%= caracteristicas?.status?.TAM ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.TAM ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.TAM ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>POD</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.POD" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this); CalculaMpMax()" 
-                               id="valor-pod"
-                               value="<%= caracteristicas?.status?.POD ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.POD"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this); CalculaMpMax()"
+                             id="valor-pod"
+                             value="<%= caracteristicas?.status?.POD ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.POD ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.POD ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>APA</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.APA" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this)" 
-                               id="valor-apa"
-                               value="<%= caracteristicas?.status?.APA ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.APA"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this)"
+                             id="valor-apa"
+                             value="<%= caracteristicas?.status?.APA ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
-                <tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.APA ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.APA ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
+                  <tr>
                     <td>EDU</td>
-                    <td> 
-                        <input type="number" name="caracteristicas.status.EDU" 
-                               placeholder="50" min="0"
-                               oninput="AtualizaAtributo(this)" 
-                               id="valor-edu"
-                               value="<%= caracteristicas?.status?.EDU ?? '' %>"> 
+                    <td>
+                      <input type="number" name="caracteristicas.status.EDU"
+                             placeholder="50" min="0"
+                             oninput="AtualizaAtributo(this)"
+                             id="valor-edu"
+                             value="<%= caracteristicas?.status?.EDU ?? '' %>">
                     </td>
-                    <td class="valor-bom"></td>
-                    <td class=valor-extremo></td>
-                </tr>
+                    <td class="valor-bom">
+                      <%= Math.floor((caracteristicas?.status?.EDU ?? 0) / 2) %>
+                    </td>
+                    <td class="valor-extremo">
+                      <%= Math.floor((caracteristicas?.status?.EDU ?? 0) / 5) %>
+                    </td>
+                  </tr>
+                  
             </tbody>
 
         </table>

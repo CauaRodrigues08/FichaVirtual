@@ -16,14 +16,26 @@
         <% sheets.forEach(sheet => { %>
             <div class="row mb-3">
                 <div class="col-12">
-                    <a href="/fichas/<%= sheet._id %>" class="w-100 text-decoration-none">
-                        <button class="btn btn-outline-dark w-100 d-flex flex-column align-items-start justify-content-center p-3">
-                            <h3 class="text-start mb-1">Nome: <%= sheet.informacoes.nome %> </h3>
-                            <p class="text-start mb-0">Id: <%= sheet._id %></p>
+                  <a href="/fichas/<%= sheet._id %>" class="w-100 text-decoration-none">
+                    <div class="position-relative w-100">
+                      <button class="btn btn-outline-dark w-100 d-flex flex-column align-items-start justify-content-center p-3">
+                        <h3 class="text-start mb-1">Nome: <%= sheet.informacoes.nome %> </h3>
+                        <p class="text-start mb-0">Id: <%= sheet._id %></p>
+                      </button>
+              
+                      <form action="/fichas/<%= sheet._id %>?_method=DELETE" method="POST">
+                        <button type="submit" 
+                            class="btn btn-outline-danger d-flex justify-content-center align-items-center position-absolute top-0 end-0 m-2" 
+                            style="width: 36px; height: 36px;"
+                            onclick="return confirm('Tem certeza que deseja deletar essa ficha?')">
+                            <i class="bi bi-trash mt-1"></i>
                         </button>
-                    </a>
+                      </form>
+                    </div>
+                  </a>
                 </div>
-            </div>
+              </div>
+              
         <% }) %>
     <% } else { %>
         <h3>Parece que não há fichas por aqui.</h3>

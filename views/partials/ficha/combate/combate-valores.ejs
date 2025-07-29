@@ -10,15 +10,63 @@
             <tbody>
                 <tr>
                     <th>MOV</th>
-                    <td id="mov-display"></td>
+                    <td id="mov-display">
+                        <%
+                        const FOR = caracteristicas?.status?.FOR ?? 0;
+                        const DES = caracteristicas?.status?.DES ?? 0;
+                        const TAM = caracteristicas?.status?.TAM ?? 0;
+                        let mov = 7;
+                        if (DES > TAM && FOR > TAM) {
+                        mov = 9;
+                        } else if (DES >= TAM || FOR >= TAM) {
+                        mov = 8;
+                        }
+                        %>
+                    <%= mov %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Porte</th>
-                    <td id="porte"></td>
+                    <td id="porte">
+                        <%
+                        const total = (FOR ?? 0) + (TAM ?? 0);
+                        let porte = 0;
+                        if (total <= 64) porte = -2;
+                        else if (total <= 84) porte = -1;
+                        else if (total <= 124) porte = 0;
+                        else if (total <= 164) porte = 1;
+                        else if (total <= 204) porte = 2;
+                        else if (total <= 284) porte = 3;
+                        else if (total <= 364) porte = 4;
+                        else if (total <= 444) porte = 5;
+                        else {
+                        const extras = Math.ceil((total - 444) / 80);
+                        porte = 5 + extras;
+                        }
+                    %>
+                    <%= porte %>
+                    </td>
                 </tr>
                 <tr>
                     <th>Dano Bônus</th>
-                    <td id="dano-bonus"></td>
+                    <td id="dano-bonus">
+                        <%
+                            let danoBonus = "0";
+                            if (total <= 64) danoBonus = "-2";
+                            else if (total <= 84) danoBonus = "-1";
+                            else if (total <= 124) danoBonus = "0";
+                            else if (total <= 164) danoBonus = "+1D4";
+                            else if (total <= 204) danoBonus = "+1D6";
+                            else if (total <= 284) danoBonus = "+2D6";
+                            else if (total <= 364) danoBonus = "+3D6";
+                            else if (total <= 444) danoBonus = "+4D6";
+                            else {
+                            const extras = Math.ceil((total - 444) / 80);
+                            danoBonus = `+${4 + extras}D6`;
+                            }
+                        %>
+                        <%= danoBonus %>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -36,9 +84,14 @@
             <tbody>
                 <tr>
                     <td>Esquiva</td>
-                    <td id="esquiva-normal"></td>
-                    <td id="esquiva-bom"></td>
-                    <td id="esquiva-extremo"></td>
+                    <%
+                        const esquiva = habilidades?.esquiva?.valor ?? 0;
+                        const esquivaBom = Math.floor(esquiva / 2);
+                        const esquivaExtremo = Math.floor(esquiva / 5);
+                    %>
+                    <td id="esquiva-normal"><%= esquiva %></td>
+                    <td id="esquiva-bom"><%= esquivaBom %></td>
+                    <td id="esquiva-extremo"><%= esquivaExtremo %></td>
                 </tr>
             </tbody>
         </table>
