@@ -353,5 +353,3 @@ document.addEventListener('DOMContentLoaded', () => {
         input.addEventListener('input', atualizarValoresCombate);
     });
 });
-
-module.exports = {skills};

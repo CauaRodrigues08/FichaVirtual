@@ -13,7 +13,7 @@ function CalculaInsanidade() {
 //Calcula a sanidade máxima e impede os atuais de ultrapassar o máximo
 function CalculaSanMax() {
     //Localiza Cthulhu Mythos
-    const cthuMythInput = document.querySelector('input[data-skill-name="Cthulhu-Mythos"]');
+    const cthuMythInput = document.querySelector('input[name="habilidades.cthulhuMythos.valor"]');
 
     //Obtém o valor de Cthulhu Mythos
     const cthuMyth = cthuMythInput ? parseInt(cthuMythInput.value || 0) : 0;
@@ -29,26 +29,6 @@ function CalculaSanMax() {
     //Verifica a sanidade máxima
     VerificaSan(sanMax);
 }
-
-//Event listeners de Cthulhu Mythos (não está funcionando?)
-document.addEventListener('DOMContentLoaded', () => {
-    // Localiza o campo Cthulhu-Mythos
-    const cthuMythInput = document.querySelector('input[data-skill-name="Cthulhu-Mythos"]');
-    
-    // Verifica se o elemento existe antes de adicionar o event listener
-    if (cthuMythInput) {
-        cthuMythInput.addEventListener('input', CalculaSanMax);
-    }
-
-    // Executa o cálculo inicial para garantir que os valores comecem corretos
-    CalculaSanMax();
-
-     // Adiciona verificação dinâmica para sanidade atual ao alterar seu valor
-     const sanAtualInput = document.querySelector('#san-atual');
-     if (sanAtualInput) {
-         sanAtualInput.addEventListener('input', () => VerificaSan());
-     }
-});
 
 //Verifica a sanidade
 function VerificaSan(sanMax = null) {
@@ -67,3 +47,23 @@ function VerificaSan(sanMax = null) {
     }
 }
 
+document.addEventListener('input', e => {
+    const tgt = e.target;
+  
+    // se for o campo Mythos
+    if (tgt.matches('input[name="habilidades.cthulhuMythos.valor"]')) {
+      CalculaSanMax();
+    }
+  
+    // se for o campo Sanidade atual
+    if (tgt.matches('#san-atual')) {
+      VerificaSan();
+    }
+  });
+  
+  // cálculo inicial caso já venha com valor
+  CalculaSanMax();
+
+  window.addEventListener('load', () => {
+    CalculaSanMax();
+  });
