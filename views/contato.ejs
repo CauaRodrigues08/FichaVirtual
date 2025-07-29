@@ -1,11 +1,40 @@
 <%- include('./partials/head') %>
 
-<body class="d-flex align-items-center justify-content-center vh-100 bg-image-old-paper" style="overflow: hidden;">
+<body class="bg-image-old-paper mt-5" style="overflow-y: auto;">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col">
+          <h2>Informações para contato</h2>
+        </div>
+        <div class="col-auto text-end">
+          <a
+            href="/"
+            class="btn btn-danger me-2"
+            style="background-color: #813a3a; border-color: #813a3a;"
+          >
+            Menu
+          </a>
+        </div>
+      </div>
+      <br>
 
-    <div class="container text-center">
-        <h1 class="display-4">Infelizmente, ninguém lhe responde...</h1>
-        <p class="lead">Que tipo de ser você está tentando contatar, afinal?</p>
-        <a href="/" class="btn btn-primary" style="background-color:#3a5f81; border-color: #3a5f81;">Voltar para o menu</a>
+      <div class="col-md-5 mb-4">
+        <h5>Informações</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <i class="bi bi-envelope-fill me-2"></i>
+            Email: cauarodrigues066@gmail.com
+          </li>
+          <li class="mb-2">
+            <i class="bi bi-telephone-fill me-2"></i>
+            Telefone: (Talvez haja um número aqui no futuro!)
+          </li>
+          <li>
+            <i class="bi bi-geo-alt-fill me-2"></i>
+            Endereço: Provavelmente em algum lugar da Terra
+          </li>
+        </ul>
+      </div>
     </div>
 
 <%- include('./partials/footer') %>

@@ -1,11 +1,97 @@
 <%- include('./partials/head') %>
 
-<body class="d-flex align-items-center justify-content-center vh-100 bg-image-old-paper" style="overflow: hidden;">
+<body class="bg-image-old-paper mt-5" style="overflow-y: auto;">
+    <div class="container">
 
-    <div class="container text-center">
-        <h1 class="display-4">O caminho em frente parece perigoso...</h1>
-        <p class="lead">Talvez você encontre algumas informações sobre o projeto aqui no futuro!</p>
-        <a href="/" class="btn btn-primary" style="background-color:#3a5f81; border-color: #3a5f81;">Voltar para o menu</a>
+      <!-- Cabeçalho -->
+    <header class="text-center mb-5">
+        <h1 class="display-4">Sobre o Projeto</h1>
+        <p class="lead">
+          Uma ferramenta simples para gerenciar fichas no seu navegador.
+        </p>
+      </header>
+  
+      <!-- Visão Geral -->
+      <section id="overview" class="mb-5">
+        <h2>Visão Geral</h2>
+        <p>
+          Esse projeto nasceu pela insatisfação com a versão em PDF editável da ficha, e eventualmente se tornou nesse sistema realmente funcional! <br> A partir de um servidor MongoDB, você pode salvar, carregar, editar e excluir suas fichas de Call of Cthulhu 7th Ed.
+        </p>
+      </section>
+  
+      <!-- Funcionalidades -->
+      <section id="features" class="mb-5">
+        <h2>Funcionalidades</h2>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card h-100 text-center bg-transparent" style="border-color: transparent;">
+              <div class="card-body">
+                <i class="bi bi-pencil-square display-6 mb-3"></i>
+                <h5>Criação de Fichas</h5>
+                <p>Criação e salvamento de fichas em servidor.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 text-center bg-transparent" style="border-color: transparent;">
+              <div class="card-body">
+                <i class="bi bi-receipt-cutoff display-6 mb-3"></i>
+                <h5>Cálculos automáticos</h5>
+                <p>Todo valor na ficha que é derivado de outro e que não necessita de seu input é calculado automaticamente.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card h-100 text-center bg-transparent" style="border-color: transparent;">
+              <div class="card-body">
+                <i class="bi bi-trash3-fill display-6 mb-3"></i>
+                <h5>Gerenciamento Completo</h5>
+                <p>Você pode criar, ver uma lista de suas fichas, editá-las e apagá-las (não sem antes confirmar!) por aqui.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+  
+      <!-- Tecnologias Utilizadas -->
+      <section id="tech" class="mb-5">
+        <h2 class="mb-3">Tecnologias utilizadas</h2>
+        <ul class="list-inline text-center">
+          <li class="list-inline-item mx-3"><strong>Node.js</strong></li>
+          <li class="list-inline-item mx-3"><strong>Express</strong></li>
+          <li class="list-inline-item mx-3"><strong>MongoDB</strong></li>
+          <li class="list-inline-item mx-3"><strong>EJS</strong></li>
+          <li class="list-inline-item mx-3"><strong>Bootstrap 5</strong></li>
+        </ul>
+      </section>
+  
+      <!-- Roadmap -->
+      <section id="roadmap" class="mb-5">
+        <h2>Possíveis atualizações</h2>
+        <ul>
+          <li>Opção de habilitar regras alternativas/opcionais (por exemplo, as de Pulp Cthulhu)</li>
+          <li>Exportar/Importar Fichas em PDF(!)</li>
+          <li>Customização mais profunda da ficha (habilidades próprias, manipulação dos cálculos para os narradores de plantão, etc.)</li>
+          <li>Expansão para outros sistemas de RPG!</li>
+        </ul>
+      </section>
+  
+      <!-- Contato -->
+      <section id="team" class="mb-3 text-center">
+        <h2>Quem sou eu?</h2>
+        <p>Meu nome é Cauã, e sou simplemente um rpgista que pelas alegorias do destino acabou entrando no mundo da informática, e uma coisa levou a outra, e cá estamos.<br>Eu não sou de forma alguma um profissional, então peço que deixe suas expectativas de acordo. Qualquer erro, bug, sugestão (ou qualquer coisa sobre a ficha mesmo), sinta-se livre para falar sobre! E desde já, agradeço muitíssimo por estar testando meu projeto!<br>Boas aventuras, <strong>Investigador!</strong></p>
+        <a href="/contato" class="btn btn-primary" style="background-color:#3a5f81; border-color: #3a5f81;">
+            Contato
+        </a>
+      </section>
+  
+      <!-- Footer de Navegação -->
+      <footer class="text-center mt-3" style="margin-bottom: 20px;">
+        <a href="/" class="btn btn-danger" style="background-color: #813a3a; border-color: #813a3a;">
+          Voltar ao Menu
+        </a>
+      </footer>
+    
     </div>
 
 <%- include('./partials/footer') %>
