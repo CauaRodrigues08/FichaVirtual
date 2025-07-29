@@ -1,44 +1,101 @@
 <%- include('./partials/head') %>
 
 <body class="bg-image-old-paper mt-5" style="overflow-y: auto;">
-<div class="container">
+  <div class="container">
     <div class="row align-items-center">
-        <div class="col">
-            <h2>Fichas criadas</h2>
-        </div>
-        <div class="col text-center my-4">
-            <a href="/" class="btn btn-danger" style="background-color: #813a3a; border-color: #813a3a;">Menu</a>
-        </div>
+      <div class="col">
+        <h2>Fichas criadas</h2>
+      </div>
+      <div class="col-auto text-end">
+        <a
+          href="/"
+          class="btn btn-danger me-2"
+          style="background-color: #813a3a; border-color: #813a3a;"
+        >
+          Menu
+        </a>
+        <a
+          href="/criar"
+          class="btn btn-primary"
+          style="background-color: #3a5f81; border-color: #3a5f81;"
+        >
+          Criar ficha
+        </a>
+      </div>
     </div>
     <br>
 
     <% if (sheets.length > 0) { %>
-        <% sheets.forEach(sheet => { %>
-            <div class="row mb-3">
-                <div class="col-12">
-                  <a href="/fichas/<%= sheet._id %>" class="w-100 text-decoration-none">
-                    <div class="position-relative w-100">
-                      <button class="btn btn-outline-dark w-100 d-flex flex-column align-items-start justify-content-center p-3">
-                        <h3 class="text-start mb-1">Nome: <%= sheet.informacoes.nome %> </h3>
-                        <p class="text-start mb-0">Id: <%= sheet._id %></p>
-                      </button>
-              
-                      <form action="/fichas/<%= sheet._id %>?_method=DELETE" method="POST">
-                        <button type="submit" 
-                            class="btn btn-outline-danger d-flex justify-content-center align-items-center position-absolute top-0 end-0 m-2" 
-                            style="width: 36px; height: 36px;"
-                            onclick="return confirm('Tem certeza que deseja deletar essa ficha?')">
-                            <i class="bi bi-trash mt-1"></i>
-                        </button>
-                      </form>
-                    </div>
-                  </a>
-                </div>
+      <!-- Barra de pesquisa -->
+      <div class="row mb-4">
+        <div class="col-md-6">
+          <input
+            type="text"
+            id="searchInput"
+            class="form-control"
+            placeholder="Pesquisar por nome..."
+          >
+        </div>
+      </div>
+
+      <!-- Loop de fichas -->
+      <% sheets.forEach(sheet => { %>
+        <div
+          class="row mb-3 sheet-row"
+          data-name="<%= sheet.informacoes.nome.toLowerCase() %>"
+        >
+          <div class="col-12">
+            <a href="/fichas/<%= sheet._id %>" class="w-100 text-decoration-none">
+              <div class="position-relative w-100">
+                <button
+                  class="btn btn-outline-dark w-100 d-flex flex-column
+                         align-items-start justify-content-center p-3"
+                >
+                  <h3 class="text-start mb-1">
+                    Nome: <%= sheet.informacoes.nome %>
+                  </h3>
+                  <p class="text-start mb-0">Id: <%= sheet._id %></p>
+                </button>
+
+                <form action="/fichas/<%= sheet._id %>?_method=DELETE" method="POST">
+                  <button
+                    type="submit"
+                    class="btn btn-outline-danger d-flex justify-content-center
+                           align-items-center position-absolute top-0 end-0 m-2"
+                    style="width: 36px; height: 36px;"
+                    onclick="return confirm('Tem certeza que deseja deletar essa ficha?')"
+                  >
+                    <i class="bi bi-trash mt-1"></i>
+                  </button>
+                </form>
               </div>
-              
-        <% }) %>
+            </a>
+          </div>
+        </div>
+      <% }) %>
+
     <% } else { %>
-        <h3>Parece que não há fichas por aqui.</h3>
+      <div class="row align-items-center">
+        <div class="col">
+          <h3>Parece que não há fichas por aqui.</h3>
+        </div>
+      </div>
     <% } %>
-</div>
-<%- include('./partials/footer') %>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.querySelector('#searchInput');
+      const rows = document.querySelectorAll('.sheet-row');
+      if (!searchInput) return;
+
+      searchInput.addEventListener('input', () => {
+        const term = searchInput.value.trim().toLowerCase();
+        rows.forEach(row => {
+          row.style.display = row.dataset.name.includes(term) ? '' : 'none';
+        });
+      });
+    });
+  </script>
+
+  <%- include('./partials/footer') %>
