@@ -92,4 +92,17 @@ router.put('/:id', async (req, res) => {
   }
 });
 
+router.delete('/:id', async (req, res) => {
+  try {
+    const deletedSheet = await Sheet.findByIdAndDelete(req.params.id);
+    if (!deletedSheet) {
+      return res.status(404).send('Ficha não encontrada');
+    }
+    res.redirect('/fichas');
+  } catch (err) {
+    console.error(err);
+    res.status(500).send('Erro ao deletar ficha: ' + err.message);
+  }
+});
+
 module.exports = router;

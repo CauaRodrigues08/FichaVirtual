@@ -18,9 +18,9 @@ body {
 
 .bg-image-old-paper {
   background-image: url("/images/old-paper-background.jpg");
-  background-size: cover;
+  background-size: 100% auto;
   background-position: center;
-  background-repeat: no-repeat;
+  background-repeat: repeat-y;
 }
 
 .bg-image-ficha {
