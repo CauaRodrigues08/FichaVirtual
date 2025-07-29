@@ -16,6 +16,8 @@ function atualizarHabilidadesRelacionadas() {
     if (esquivaInput) {
         // Atualiza o min para Esquiva (metade do valor de Destreza)
         esquivaInput.setAttribute('min', Math.floor(valorDes / 2));
+        AdicionaValorEsquiva();
+        AtualizaAtributo(esquivaInput);
     }
 
     // Corrige o valor se estiver abaixo do valor mínimo
@@ -28,6 +30,7 @@ function atualizarHabilidadesRelacionadas() {
     if (idiomaInput) {
         // Atualiza o min para Idioma (Nativo) com o valor de Educação
         idiomaInput.setAttribute('min', valorEdu);
+        AtualizaAtributo(idiomaInput);
     }
      // Corrige o valor se estiver abaixo do valor mínimo
      if (parseInt(idiomaInput.value) < valorEdu) {
